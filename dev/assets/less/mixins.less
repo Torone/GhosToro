@@ -1,0 +1,37 @@
+// Convert all font size to 'rem' if supported. rem > em > px
+// Usage: .font-size(1.6); (1.6 rem/em and 16px);
+// http://pxtoem.com/
+.font-size(@sizeValue) {
+  @remValue: 	@sizeValue;
+  @emValue: 	@sizeValue;
+  @pxValue: 	(@sizeValue * 10);
+  font-size: 	~"@{pxValue}px"; 
+  font-size: 	~"@{remValue}em";
+  font-size: 	~"@{remValue}rem";
+}
+
+// Set vendor-prefix property for border radius.
+// Usage: .border-radius(5px);
+.border-radius (@radius) {
+	-webkit-border-radius: 		@radius;
+	-moz-border-radius:    		@radius;
+	border-radius:         		@radius;
+
+	-moz-background-clip:    	padding;
+	-webkit-background-clip: 	padding-box;
+	background-clip:         	padding-box;
+}
+
+// Set vendor-prefix property for opacity.
+// Usage: .opacity(0.5);
+.opacity (@opacity) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 					@opacity;
+}
+
+// Sometimes you need element to be 100% width minus a small portion in pixels. Here we are.
+// Usage:.fullWidth(30); Return width: 100% (relative) - 30px;
+.fullWidth(@width) {
+	width: calc(~'100% - @{width}px');
+}
