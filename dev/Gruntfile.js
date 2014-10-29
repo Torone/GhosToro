@@ -31,14 +31,26 @@ module.exports = function (grunt) {
         },
         src: [
           '<%= toro.temp %>',
-          '<%= toro.distcss %>',
-          '<%= toro.distjs %>',
-          '<%= toro.dist %>/*.hbs',
-          '<%= toro.dist %>/partials/*.hbs',
-          '<%= toro.dist %>/assets',
-          '<%= toro.dist %>/partials'
+          '<%= toro.dist %>/assets'
         ]
-      } 
+      },
+      css: {
+        options: {
+          force: true
+        },
+        src: [
+          '<%= toro.dist %>/assets/css'
+        ]
+      },
+      js: {
+        options: {
+          force: true
+        },
+        src: [
+          '<%= toro.temp %>',
+          '<%= toro.dist %>/assets/js'
+        ]
+      }
     },
 
     // Always check if javascript code is clean and well written.
@@ -79,7 +91,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Less Compiler
+    // Less Compiler.
     less: {
       all: {
         options: {
@@ -104,7 +116,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Always check if all SASS files are clean and well written
+    // Always check if all SASS files are clean and well written.
     lesslint: {
       all: ['<%= toro.devless %>/main.less'],
       options: {
@@ -114,54 +126,41 @@ module.exports = function (grunt) {
       }
     },
 
-    // Copies remaining files to places other tasks can use
-    copy: {
+    // Parse CSS and add vendor-prefixed CSS properties.
+    autoprefixer: {
+      options: {
+        browsers: ['last 3 version']
+      },
       all: {
-        files: [{
-          expand: true,
-          src: ['**/*.hbs'],
-          dest: '<%= toro.dist %>'
-        }]
+        src: '<%= toro.distcss %>/main.css'
       }
     },
 
-    // Watches files for changes and runs tasks based on the changed files
+    // Watches files for changes and runs tasks based on the changed files.
     watch: {
+      options: {
+        livereload: true
+      },
       js: {
         files: ['<%= toro.devjs %>/**/*.js'],
-        tasks: ['clean', 'jshint', 'concat', 'uglify'],
-        options: {
-          livereload: true
-        }
+        tasks: ['clean:js', 'jshint', 'concat', 'uglify']
       },
-      
       css: {
         files: ['<%= toro.devless %>/**/*.less'],
-        tasks: ['clean', 'less', 'lesslint'],
-        options: {
-          livereload: true
-        }
-      },
-
-      hbs: {
-        files: ['**/*.hbs'],
-        tasks: ['clean', 'copy'],
-        options: {
-          livereload: true
-        }
+        tasks: ['clean:css', 'less', 'autoprefixer', 'lesslint']
       }
     }
 
   });
 
 	grunt.registerTask('default', [
-    'clean',
+    'clean:all',
     'jshint',
     'concat',
     'uglify',
 		'less',
+    'autoprefixer',
     'lesslint',
-    'copy',
     'watch'
 	]);
 
