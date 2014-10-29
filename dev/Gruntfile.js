@@ -39,7 +39,7 @@ module.exports = function (grunt) {
           force: true
         },
         src: [
-          '<%= toro.dist %>/assets/css'
+          '<%= toro.distcss %>'
         ]
       },
       js: {
@@ -48,7 +48,7 @@ module.exports = function (grunt) {
         },
         src: [
           '<%= toro.temp %>',
-          '<%= toro.dist %>/assets/js'
+          '<%= toro.distjs %>'
         ]
       }
     },
