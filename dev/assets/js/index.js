@@ -10,6 +10,7 @@
         // Push down the blog at the beginning.
     	var home = $('.home-template');
     	var centered = $('.v-center');
+        var homeContent = $('.content');
     	var t;
 
     	if (home.length !== 0) {
@@ -26,6 +27,7 @@
     		var windowHeight = $(window).height();
     		var h = windowHeight - headerHeight;
     		centered.css('height', h);
+            homeContent.show();
     	}
 
         // Hide the "scroll down" text on scroll.
