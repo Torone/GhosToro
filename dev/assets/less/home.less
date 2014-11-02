@@ -1,0 +1,140 @@
+.home-template,
+.archive-template,
+.tag-template,
+.author-template {
+	background-color: #0a0a1e;
+
+	canvas {
+		display: block;
+	}
+
+	.v-center {
+		display: table;
+		width: 100%;
+
+		.v-wrapper {
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+
+			.description {
+
+				h1 {
+					color: #f6f7f8;
+					font-weight: normal;
+					margin: 0;
+					text-align: center;
+					width: 100%;
+					z-index: 1;
+				}
+			}
+
+			#nav {
+
+				#home-menu {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					position: relative;
+					text-align: center;
+
+					li {
+
+						a {
+							border: 2px solid #6c6c78;
+							border-radius: 4px;
+							display: inline-block;
+							padding: 14px 0;
+							width: 180px;
+
+							&:hover {
+								border-color: @red;
+								color: @red;
+							}
+						}
+					}
+				}
+			}
+
+			.scroll-down {
+				position: absolute;
+				bottom: 5px;
+				text-align: center;
+				width: 100%;
+
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+	.home-template {
+
+		.description {
+			padding: 30px 0 50px;
+
+			h1 {
+				.font-size(3);
+				line-height: 34px;
+			}
+		}
+
+		nav {
+			margin-bottom: 80px;
+
+			#home-menu {
+
+				li {
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	.home-template {
+
+		.description {
+
+			h1 {
+				.font-size(4.2);
+				line-height: 50px;
+			}
+		}
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.home-template {
+
+		.description {
+			padding-bottom: 80px;
+
+			h1 {
+				.font-size(6);
+				line-height: 78px;
+			}
+		}
+
+		nav {
+			text-align: center;
+
+			#home-menu {
+				display: inline-block;
+				width: auto;
+
+				li {
+					float: left;
+					margin: 0 5px;
+				}
+			}
+		}
+	}
+}

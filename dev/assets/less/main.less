@@ -1,14 +1,78 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Exo+2:400,700);
+@import url(http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css);
 
 /* Import Less dependencies. */
 @import "variables";
 @import "mixins";
 @import "normalize";
 
-/* Custom CSS here */
-body {
-	color: @black; 								/* Variable example */
-	font-family: @baseFontName; 	/* Google Fonts usage through Variables example */
-	.font-size(@baseFontSize); 		/* Mixins with Variable example */
-	/* etc... */
+html * {
+	box-sizing: border-box;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-webkit-touch-callout: none;
+	user-select: #ef4641;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	color: @grey;
+	font-family: 'Exo 2', sans-serif;
+	.font-size(1.6); 
+}
+
+a, p {
+	font-size: 18px;
+	line-height: 28px;
+	text-decoration: none;
+}
+
+a {
+	color: @grey;
+	transition: all 0.3s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+	background: #e6e6e6;
+	padding: 0 5px;
+}
+
+blockquote {
+	border-left: 5px solid @grey;
+	margin-left: 20px;
+	padding-left: 20px;
+}
+
+canvas {
+	background-color: #0a0a1e;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+.post-template,
+.page-template,
+.archive-template {
+	background: url('../images/pixel-grid.png') 0 0 repeat @white;
+}
+
+@import "header";
+@import "home";
+@import "contents";
+@import "pagination";
+@import "footer";
+@import "social";

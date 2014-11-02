@@ -1,0 +1,43 @@
+.pagination {
+	border-top: 1px solid @grey;
+	border-bottom: 1px solid @grey;
+	margin-bottom: 80px;
+	padding: 20px 0;
+	position: relative;
+	text-align: center;
+
+	.newer-posts,
+	.older-posts {
+		.font-size(1.4);
+		position: absolute;
+		text-transform: uppercase;
+		top: 14px;
+
+		span {
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+		}
+
+		&:hover {
+			span {
+				opacity: 1;
+			}
+		}
+	}
+
+	.newer-posts {
+		left: -15px;
+
+		&:hover {
+			left: 0;
+		}
+	}
+
+	.older-posts {
+		right: -15px;
+
+		&:hover {
+			right: 0;
+		}
+	}
+}

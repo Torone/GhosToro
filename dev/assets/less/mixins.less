@@ -15,3 +15,9 @@
 .fullWidth(@width) {
 	width: calc(~'100% - @{width}px');
 }
+
+// Sometimes you need element to be 100% height minus a small portion in pixels. Here we are.
+// Usage:.fullHeight(30); Return width: 100% (relative) - 30px;
+.fullHeight(@height) {
+	height: calc(~'100% - @{height}px');
+}

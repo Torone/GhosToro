@@ -1,0 +1,12 @@
+<header id="header">
+	{{#if @blog.logo}}
+		<a class="image-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}} Logo" /></a>
+	{{else}}
+	    <a class="logo" href="/">
+	        GhosToro<span>ghost theme</span>
+	    </a>
+    {{/if}}
+    {{^is 'home'}}
+    	{{> menu}}
+    {{/is}}
+</header>

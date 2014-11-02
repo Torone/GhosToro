@@ -11,6 +11,7 @@ module.exports = function (grunt) {
   // Configurable paths for the theme application.
   var appConfig = {
     temp:       '.tmp/',
+    devimg:     'assets/images/',
     devjs:      'assets/js/',
     devless:    'assets/less/',
     dist:       '../',
@@ -85,6 +86,11 @@ module.exports = function (grunt) {
 
     // Minify the file from the JS temporary folder and save it for production.
     uglify: {
+      options: {
+        mangle: false,
+        compress: false,
+        beautify: true
+      },
       all: {
         src: '<%= toro.temp %>/main.tmp.js',
         dest: '<%= toro.distjs %>/main.js'
@@ -121,7 +127,11 @@ module.exports = function (grunt) {
       all: ['<%= toro.devless %>/main.less'],
       options: {
         csslint: {
-          'font-sizes': false
+          'box-sizing': false,
+          'font-sizes': false,
+          'known-properties': false,
+          'unique-headings': false,
+          'universal-selector': false
         }
       }
     },
@@ -129,10 +139,21 @@ module.exports = function (grunt) {
     // Parse CSS and add vendor-prefixed CSS properties.
     autoprefixer: {
       options: {
-        browsers: ['last 3 version']
+        browsers: ['last 1 version']
       },
       all: {
         src: '<%= toro.distcss %>/main.css'
+      }
+    },
+
+    copy: {
+      all: {
+        files: [{
+          expand: true,
+          src: ['<%= toro.devimg %>/**/*.png'],
+          dest: '<%= toro.dist %>',
+          filter: 'isFile'
+        }]
       }
     },
 
@@ -161,6 +182,7 @@ module.exports = function (grunt) {
 		'less',
     'autoprefixer',
     'lesslint',
+    'copy',
     'watch'
 	]);
 

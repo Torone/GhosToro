@@ -1,0 +1,162 @@
+.post-template,
+.page-template,
+.archive-template,
+.author-template,
+.tag-template {
+
+	#header {
+		.logo {
+			color: @grey;
+		}
+
+		#nav {
+			float: right;
+			margin-top: 10px;
+
+			#home-menu {
+				list-style-type: none;
+
+				li {
+					float: left;
+					margin-left: 20px;
+
+					a {
+						border-bottom: 1px dashed;
+						padding: 3px 8px;
+
+						&:hover,
+						&.active {
+							background-color: @red;
+							border-color: @red;
+							color: @white;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.archive-template,
+.author-template,
+.tag-template {
+
+	#header {
+		.logo {
+			color: @white;
+		}
+	}
+}
+
+#header {
+	width: 100%;
+	height: 80px;
+	transition: background-color .5s ease-in-out;
+
+	.logo {
+		color: #fff;
+		float: left;
+		transition: background-position .5s ease-in-out;
+
+		span {
+			color: #ef4641;
+			display: block;
+		}
+	}
+}
+
+.home-template {
+
+	#header {
+		text-align: center;
+
+		.logo {
+			display: inline-block;
+			float: none;
+			text-align: center;
+		}
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+	#header {
+		padding: 0 10px;
+
+		.logo {
+			.font-size(2.4);
+			margin-top: 10px;
+
+			span {
+				font-size: 41%;
+				letter-spacing: 6px;
+				margin-top: -11px;
+			}
+		}
+
+		#nav {
+			display: none;
+		}
+	}
+
+	.home-template {
+
+		#header {
+
+			.logo {
+				margin-top: 20px;
+
+				span {
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	#header {
+		padding: 0 20px;
+
+		.logo {
+			.font-size(2.8);
+			margin-top: 20px;
+
+			span {
+				letter-spacing: 6.5px;
+				margin-top: -10px;
+			}
+		}
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	#header {
+
+		.logo {
+			.font-size(3.6);
+
+			span {
+				letter-spacing: 8.7px;
+				margin-top: -4px;
+			}
+		}
+
+		#nav {
+			display: block;
+		}
+	}
+
+	.home-template {
+
+		#header {
+
+			.logo {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
