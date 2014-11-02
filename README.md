@@ -10,8 +10,6 @@ Icons provided by [ionicons](http://ionicons.com/) and released under The MIT Li
 
 ## What's New?
 
-[My personal website](http://www.andrea-turri.com) is always running the latest version of **GhosToro**. You can preview all new features there.
-
 _No changes to the original code yet..._
 
 ## Releases
