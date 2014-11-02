@@ -21,3 +21,11 @@
 .fullHeight(@height) {
 	height: calc(~'100% - @{height}px');
 }
+
+// Animate element on load
+.showit(@duration) {
+	animation-name: showit;
+    animation-iteration-count: once;
+    animation-timing-function: ease-in;
+    animation-duration: @duration;
+}

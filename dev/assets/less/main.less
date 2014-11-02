@@ -22,6 +22,7 @@ body {
 	color: @grey;
 	font-family: 'Exo 2', sans-serif;
 	.font-size(1.6); 
+	.showit(0.7s);
 }
 
 a, p {
@@ -76,3 +77,12 @@ canvas {
 @import "pagination";
 @import "footer";
 @import "social";
+
+@keyframes showit {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
