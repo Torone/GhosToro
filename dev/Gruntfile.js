@@ -169,6 +169,20 @@ module.exports = function (grunt) {
       css: {
         files: ['<%= toro.devless %>/**/*.less'],
         tasks: ['clean:css', 'less', 'autoprefixer', 'lesslint']
+      },
+      hbs: {
+        files: ['**/*.hbs'],
+        tasks: ['handlebarsmin']
+      }
+    },
+
+    // Minify all Handlebars files for production
+    handlebarsmin: {
+      all: {
+        expand: true,
+        src: '**/*.hbs',
+        dest: '<%= toro.dist %>',
+        ext: '.hbs'
       }
     }
 
@@ -183,6 +197,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'lesslint',
     'copy',
+    'handlebarsmin',
     'watch'
 	]);
 

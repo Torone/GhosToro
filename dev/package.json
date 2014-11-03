@@ -12,6 +12,7 @@
     "grunt-contrib-less": "^0.12.0",
     "grunt-contrib-uglify": "^0.6.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-handlebars-min": "^0.3.0",
     "grunt-lesslint": "^1.1.13",
     "load-grunt-tasks": "^0.4.0",
     "time-grunt": "^0.3.1"

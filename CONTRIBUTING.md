@@ -4,6 +4,10 @@ Contributions to **GhosToro** code base are more than welcome! Fork the repo, wr
 
 ## How to
 
-This project use [Grunt](http://gruntjs.com) to manage different tasks. The development asset is inside the **dev** folder, so you have to modify all your css and javascript in there. Running `grunt` it will optimize all the files from **dev** to the main assets folder.
-Feel free to manage the Handlebars files in the main directory.
-You _can / should_ delete the **dev** folder once published.
+This project use [Grunt](http://gruntjs.com) to manage different tasks and I created a **dev** folder to manage the Handlebars and the assets files.
+All your changes should be made within the **dev** filder.
+Running `grunt` will clean, copy and minify all the necessary files to the main directory.
+
+## Deploy
+
+When you're ready to put **GhosToro** theme online I suggest to delete the **node_modules** folder before the upload and delete the unnecessary **dev** folder once it is on your server, not delete it locally or you may lost your changes.
