@@ -87,9 +87,7 @@ module.exports = function (grunt) {
     // Minify the file from the JS temporary folder and save it for production.
     uglify: {
       options: {
-        mangle: false,
-        compress: false,
-        beautify: true
+        mangle: false
       },
       all: {
         src: '<%= toro.temp %>/main.tmp.js',
