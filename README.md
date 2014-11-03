@@ -25,6 +25,19 @@ See the [changelog](CHANGELOG.md) for release details.
 | :-----: | :----------: |
 | 1.0 | 28-10-2014 |
 
+## Run
+
+- Fork or Download the theme;
+- Go to the **dev** folder;
+- Run `npm install` to load Grunt dependencies;
+- Run `grunt` to create the necessary production files;
+
+## Deploy
+
+- Delete the **node_modules** folder;
+- Upload **GhosToro**;
+- Delete the **dev** folder from your server. **Do not delete it locally or you may lost your changes**.
+
 ## Contributing and Forking
 
 **GhosToro** is open source and released under the MIT License, and contributions to the code base are welcome and encouraged. Find [more information about contributing here](CONTRIBUTING.md).
