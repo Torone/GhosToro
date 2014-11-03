@@ -23,7 +23,7 @@ See the [changelog](CHANGELOG.md) for release details.
 
 | Version | Release Date |
 | :-----: | :----------: |
-| 1.0 | 28-10-2014 |
+| 1.0 | 03-11-2014 |
 
 ## Run
 
