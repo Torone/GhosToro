@@ -148,7 +148,7 @@ module.exports = function (grunt) {
       all: {
         files: [{
           expand: true,
-          src: ['<%= toro.devimg %>/**/*.png'],
+          src: ['<%= toro.devimg %>/**/*.png', '**/*.hbs'],
           dest: '<%= toro.dist %>',
           filter: 'isFile'
         }]
@@ -179,8 +179,7 @@ module.exports = function (grunt) {
       all: {
         expand: true,
         src: '**/*.hbs',
-        dest: '<%= toro.dist %>',
-        ext: '.hbs'
+        dest: '<%= toro.dist %>'
       }
     }
 
@@ -195,7 +194,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'lesslint',
     'copy',
-    'handlebarsmin',
+    //'handlebarsmin', Currently disabled because it cause error with new Ghost version 0.5.2.
     'watch'
 	]);
 
