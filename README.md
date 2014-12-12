@@ -13,7 +13,7 @@ Icons provided by [ionicons](http://ionicons.com/) and released under The MIT Li
 <!--
 [My personal website](http://www.andrea-turri.com) is always running the latest version of **GhosToro**. You can preview all new features there.
 -->
-At the moment a preview of the latest version of **GhosToro** is running [here](http://178.62.113.88:8080). Soon I will change it.
+At the moment a preview of the latest version of **GhosToro** is running [here](http://178.62.113.88:8880). Soon I will change it.
 
 _No changes to the original code yet..._
 
