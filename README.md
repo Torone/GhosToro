@@ -36,7 +36,7 @@ See the [changelog](CHANGELOG.md) for release details.
 
 - Delete the **node_modules** folder;
 - Upload **GhosToro**;
-- Delete the **dev** folder from your server. **Do not delete it locally or you may lost your changes**.
+- Delete the **dev** folder from your server. **Do not delete it locally or you may lose your changes**.
 
 ## Contributing and Forking
 
@@ -44,7 +44,7 @@ See the [changelog](CHANGELOG.md) for release details.
 
 ## Copyright & License
 
-Copyright (c) 2014 Andrea Turri - Released under The MIT License.
+Copyright (c) 2014 [Andrea Turri](http://www.andrea-turri.com) - Released under The MIT License.
 
 ## Are you using GhosToro?
 
