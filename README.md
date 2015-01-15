@@ -2,7 +2,7 @@
 
 Open source, responsive and minimal [Ghost](http://ghost.org/) theme inspired by [Studio Dot Info](http://wearestudio.info/).
 
-Fonts embedded via Google Fonts, including Roboto Slab, Merriweather, and Open Sans Condensed.
+Font embedded via Google Fonts: Exo 2.
 
 The Ghost, Facebook, Twitter, and Google+ icons are trademarks of their respective owners and are from the Casper theme, copyright (c) 2013 Ghost Foundation and released under The MIT License.
 
