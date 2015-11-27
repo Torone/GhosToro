@@ -16,7 +16,8 @@ module.exports = function (grunt) {
     devless:    'assets/less/',
     dist:       '../',
     distjs:     '../assets/js/',
-    distcss:    '../assets/css/'
+    distcss:    '../assets/css/',
+    exp:        '../dist/',
   };
 
 	grunt.initConfig({
@@ -145,12 +146,20 @@ module.exports = function (grunt) {
     },
 
     copy: {
-      all: {
+      main: {
         files: [{
           expand: true,
           src: ['<%= toro.devimg %>/**/*.png', '**/*.hbs'],
           dest: '<%= toro.dist %>',
           filter: 'isFile'
+        }]
+      },
+      exp: {
+        files: [{
+          expand: true,
+          cwd: '../',
+          src: ['assets/**', '**/*.hbs', '!**/node_modules/**', '!**/dev/**', '!**/dist/**'],
+          dest: '<%= toro.exp %>',
         }]
       }
     },
@@ -181,6 +190,17 @@ module.exports = function (grunt) {
         src: '**/*.hbs',
         dest: '<%= toro.dist %>'
       }
+    },
+
+    compress: {
+      main: {
+        options: {
+          archive: '../GhosToro.zip'
+        },
+        files: [
+          {cwd: '<%= toro.exp %>', src: ['**/*'], expand: true}
+        ]
+      }
     }
 
   });
@@ -193,9 +213,22 @@ module.exports = function (grunt) {
 		'less',
     'autoprefixer',
     'lesslint',
-    'copy',
+    'copy:main',
     //'handlebarsmin', Currently disabled because it cause error with new Ghost version 0.5.2.
     'watch'
 	]);
+
+  grunt.registerTask('export', [
+    'clean:all',
+    'jshint',
+    'concat',
+    'uglify',
+    'less',
+    'autoprefixer',
+    'lesslint',
+    'copy',
+    //'handlebarsmin', Currently disabled because it cause error with new Ghost version 0.5.2.
+    'compress',
+  ]);
 
 };
