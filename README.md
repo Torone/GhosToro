@@ -31,12 +31,12 @@ See the [changelog](CHANGELOG.md) for release details.
 - Go to the **dev** folder;
 - Run `npm install` to load Grunt dependencies;
 - Run `grunt` to create the necessary production files;
+- Grunt will watch files locally, so you can use the GhosToro folder as a local theme to test your changes
 
 ## Deploy
 
-- Delete the **node_modules** folder;
-- Upload **GhosToro**;
-- Delete the **dev** folder from your server. **Do not delete it locally or you may lose your changes**.
+- Run `grunt export` to create a dist folder that will create all the necessary production theme files to upload to a server;
+- A GhosToro.zip file will also be created if you require a zipped theme for upload
 
 ## Contributing and Forking
 

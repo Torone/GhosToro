@@ -3,3 +3,5 @@ dev/.tmp
 /assets
 /*.hbs
 /partials/*.hbs
+/dist
+/GhosToro.zip
