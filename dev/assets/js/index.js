@@ -8,8 +8,8 @@
 
     $(document).ready(function(){
         // Push down the blog at the beginning.
-    	var home = $('.home-template');
-    	var centered = $('.v-center');
+    	var home = $('.home-template, .paged');
+    	var centered = $('.home-template .v-center');
         var homeContent = $('.content');
     	var t;
 
